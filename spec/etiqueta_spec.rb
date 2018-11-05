@@ -58,6 +58,8 @@ RSpec.describe Etiqueta do
 
     describe "# calculo de la ingesta de referencia"
     it "Se calcula correctamente la ingesta de referencia" do
-      expect(@p1.ingesta_referencia(@p1.ngrasas)).to eq(0)
+      expect(@p1.ingesta_referencia(@p1.sal)).to eq(6)
     end
+
+    
 end

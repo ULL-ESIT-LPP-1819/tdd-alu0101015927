@@ -31,4 +31,9 @@ class Tag
       @ngrasas*9 + @grasas_m*9 + @grasas_p*9 + @hidratos*4 + @polialcoholes*2.4 + @almidon*4 + @fibra*2 + @proteinas*4 + @sal*6
 
     end
+
+    def ingesta_referencia(x)
+      suma = ngrasas + ngrasas_s + hidratos + azucares + proteinas + sal + grasas_m + grasas_p + polialcoholes + almidon + fibra + vitaminas + minerales
+      (x*100)/suma
+    end
 end
