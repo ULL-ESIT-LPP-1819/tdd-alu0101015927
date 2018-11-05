@@ -24,4 +24,27 @@ RSpec.describe Etiqueta do
         expect(@p1.sal).to eq(5)
       end
 
+
+    describe "# almacenamiento de las declaraciones voluntarias"
+      it "Se almacena correctamente las grasas monoinsaturadas" do
+        expect(@p1.grasas_m).to eq(6)
+      end
+      it "Se almacena correctamente las grasas poliinsaturadas" do
+        expect(@p1.grasas_p).to eq(7)
+      end
+      it "Se almacena correctamente los polialcoholes" do
+        expect(@p1.polialcoholes).to eq(8)
+      end
+      it "Se almacena correctamente el almidon" do
+        expect(@p1.almidon).to eq(9)
+      end
+      it "Se almacena correctamente la fibra alimentaria" do
+        expect(@p1.fibra).to eq(10)
+      end
+      it "Se almacena correctamente las vitaminas" do
+        expect(@p1.vitaminas).to eq(11)
+      end
+      it "Se almacena correctamente los minerales" do
+        expect(@p1.minerales).to eq(12)
+      end
 end
