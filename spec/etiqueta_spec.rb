@@ -61,5 +61,9 @@ RSpec.describe Etiqueta do
       expect(@p1.ingesta_referencia(@p1.sal)).to eq(6)
     end
 
-    
+    describe "# formatear la etiqueta"
+    it "Se formatea la etiqueta correctamente" do
+      expect(@p1.imprimir()).to eq()
+    end
+
 end
