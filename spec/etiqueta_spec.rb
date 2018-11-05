@@ -49,10 +49,11 @@ RSpec.describe Etiqueta do
       end
 
     describe "# calculo del valor energetico"
-      it "se calula correctamente el valor energetico en kJ"
-        expect(@p1.valor_energetico_kj()).to eq(1021)
-      end
-      it "se calcula correctamente el valor energetico en kcal" do
-        expect(@p1.valor_energetico_kcal()).to eq(246.2)
-      end
+    it "Se calcula correctamente el valor energetico en kJ" do
+      expect(@p1.valor_energetico_kj()).to eq(1021)
+    end
+    it "Se calcula correctamente el valor energetico en kcal" do
+      expect(@p1.valor_energetico_kcal()).to eq(246.2)
+    end
+
 end
