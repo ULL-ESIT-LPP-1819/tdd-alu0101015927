@@ -20,5 +20,15 @@ class Tag
       @minerales = minerales
     end
 
+    def valor_energetico_kj
+      
+      ngrasas*37 + monoinsaturadas*37 + poliinsaturadas*37 + hidratos*17 + polialcoholes*10 + almidon*17 + fibra*8 + proteinas*17 + sal*25
 
+    end
+
+    def valor_energetico_kcal
+
+      ngrasas*9 + monoinsaturadas*9 + poliinsaturadas*9 + hidratos*4 + polialcoholes*2.4 + almidon*4 + fibra*2 + proteinas*4 +sal*6
+
+    end
 end
