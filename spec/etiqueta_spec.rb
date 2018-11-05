@@ -1,7 +1,7 @@
 RSpec.describe Etiqueta do
 
   before :each do
-      @p1 = Etiqueta.new(0,1,2,3,4,5)
+      @p1 = Tag.new(0,1,2,3,4,5)
     end
 
     describe "# almacenamiento de las declaraciones obligatorias"
