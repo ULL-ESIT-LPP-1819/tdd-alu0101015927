@@ -56,4 +56,8 @@ RSpec.describe Etiqueta do
       expect(@p1.valor_energetico_kcal()).to eq(246.2)
     end
 
+    describe "# calculo de la ingesta de referencia"
+    it "Se calcula correctamente la ingesta de referencia" do
+      expect(@p1.ingesta_referencia(@p1.ngrasas)).to eq(0)
+    end
 end
