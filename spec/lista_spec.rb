@@ -23,6 +23,13 @@ RSpec.describe Etiqueta do
       expect(@l.extract).to be_a(Node)
       expect(@l.empty).to be true
     end
+
+    it "se comprueba correctamente el tamaño" do
+      expect(@l.length).to eq(0)
+      @l.insert(3)
+      @l.insert(7)
+      expect(@l.length).to eq(2)
+    end
   end
 
 
