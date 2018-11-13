@@ -11,6 +11,10 @@ RSpec.describe Etiqueta do
 
       expect(@l.insert(1)).to be_a(Node)
     end
+
+    it "se extrae correctamente de la lista" do
+      expect(@l.extract).to be_a(Node)
+    end
   end
 
 
