@@ -37,36 +37,36 @@ class Tag
       (x*100)/suma
     end
 
-    def imprimir()
-      puts " \t\t\tPorcion \t IR \t "
-      puts " Valor energetico\t #{self.valor_energetico_kj} kJ\t 8.400kJ"
-      puts "     kJ / kcal \t\t #{self.valor_energetico_kcal} kcal\t 2000kcal"
-      puts " Grasas\t\t\t #{@ngrasas} g.\t\t #{self.ingesta_referencia(@ngrasas)}%"
-      puts " Grasas saturadas\t #{@ngrasas_s} g.\t\t #{self.ingesta_referencia(@ngrasas_s)}%"
-      puts " Hidratos de carbono\t #{@hidratos} g.\t\t #{self.ingesta_referencia(@hidratos)}%"
-      puts " Azucares\t\t #{@azucares} g.\t\t #{self.ingesta_referencia(@azucares)}%"
-      puts " Proteinas\t\t #{@proteinas} g.\t\t #{self.ingesta_referencia(@proteinas)}%"
-      puts " Sal\t\t\t #{@sal} g.\t\t #{self.ingesta_referencia(@sal)}%"
+    def to_s
+      a =  " \t\t\tPorcion \t IR \n"
+      a +=  " Valor energetico\t #{self.valor_energetico_kj} kJ\t 8.400kJ\n"
+      a +=  "     kJ / kcal \t\t #{self.valor_energetico_kcal} kcal\t 2000kcal\n"
+      a +=  " Grasas\t\t\t #{@ngrasas} g.\t\t #{self.ingesta_referencia(@ngrasas)}%\n"
+      a +=  " Grasas saturadas\t #{@ngrasas_s} g.\t\t #{self.ingesta_referencia(@ngrasas_s)}%\n"
+      a +=  " Hidratos de carbono\t #{@hidratos} g.\t\t #{self.ingesta_referencia(@hidratos)}%\n"
+      a +=  " Azucares\t\t #{@azucares} g.\t\t #{self.ingesta_referencia(@azucares)}%\n"
+      a +=  " Proteinas\t\t #{@proteinas} g.\t\t #{self.ingesta_referencia(@proteinas)}%\n"
+      a +=  " Sal\t\t\t #{@sal} g.\t\t #{self.ingesta_referencia(@sal)}%\n"
         if @grasas_m
-          puts " Grasas monoinsaturadas\t #{@grasas_m} g.\t\t #{self.ingesta_referencia(@grasas_m)}%"
+          a +=  " Grasas monoinsaturadas\t #{@grasas_m} g.\t\t #{self.ingesta_referencia(@grasas_m)}%\n"
         end
         if @grasas_p
-          puts " Grasas polinsaturadas\t #{@grasas_p} g.\t\t #{self.ingesta_referencia(@grasas_p)}%"
+          a +=  " Grasas polinsaturadas\t #{@grasas_p} g.\t\t #{self.ingesta_referencia(@grasas_p)}%\n"
         end
         if @polialcoholes
-          puts " Polialcoholes\t\t #{@polialcoholes} g.\t\t #{self.ingesta_referencia(@polialcoholes)}%"
+          a +=  " Polialcoholes\t\t #{@polialcoholes} g.\t\t #{self.ingesta_referencia(@polialcoholes)}%\n"
         end
         if @almidon
-          puts " Almidon\t\t #{@almidon} g.\t\t #{self.ingesta_referencia(@almidon)}%"
+          a +=  " Almidon\t\t #{@almidon} g.\t\t #{self.ingesta_referencia(@almidon)}%\n"
         end
         if @fibra
-          puts " Fibra alimentaria\t #{@fibra} g.\t\t #{self.ingesta_referencia(@fibra)}%"
+          a +=  " Fibra alimentaria\t #{@fibra} g.\t\t #{self.ingesta_referencia(@fibra)}%\n"
         end
         if @vitaminas
-          puts " Vitaminas\t\t #{@vitaminas} g.\t\t #{self.ingesta_referencia(@vitaminas)}%"
+          a +=  " Vitaminas\t\t #{@vitaminas} g.\t\t #{self.ingesta_referencia(@vitaminas)}%\n"
         end
         if @minerales
-          puts " Minerales\t\t #{@minerales} g.\t\t #{self.ingesta_referencia(@minerales)}%"
+          a +=  " Minerales\t\t #{@minerales} g.\t\t #{self.ingesta_referencia(@minerales)}%\n"
         end
     end
 end
