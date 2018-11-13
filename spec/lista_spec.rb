@@ -8,10 +8,14 @@ describe Lista do
 
   describe "# creando la lista con numeros" do
     it "se inserta correctamente en la lista " do
-      node = Node.new(1,nil,nil)
-      expect(@l.insert(1)).to eq(node)
+
+      expect(@l.insert(1)).to to_be(Node)
+    end
+
+    it "se extrae correctamente de la lista" do
+      expect(@l.extract).to eq(1)
     end
   end
 
-  
+
 end
