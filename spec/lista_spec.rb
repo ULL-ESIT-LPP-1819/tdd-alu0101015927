@@ -12,8 +12,14 @@ RSpec.describe Etiqueta do
       expect(@l.insert(1)).to be_a(Node)
     end
 
+    it "comprueba correctamente si está vacia" do
+      expect(@l.empty).to eq(false)
+    end
     it "se extrae correctamente de la lista" do
       expect(@l.extract).to be_a(Node)
+    end
+    it "comprueba correctamente si está vacia" do
+      expect(@l.empty).to eq(true)
     end
   end
 
