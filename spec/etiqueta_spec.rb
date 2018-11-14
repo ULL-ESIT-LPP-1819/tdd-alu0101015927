@@ -63,7 +63,7 @@ RSpec.describe Etiqueta do
 
     describe "# formatear la etiqueta"
     it "Se formatea la etiqueta correctamente" do
-      expect(@p1.imprimir).to eq(nil)
+      expect(@p1.to_s).to be_a(String)
     end
 
 end

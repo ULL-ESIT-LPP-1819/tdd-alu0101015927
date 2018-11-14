@@ -1,4 +1,4 @@
-require 'lib/lista.rb'
+require 'lib/etiqueta/lista.rb'
 
 RSpec.describe Etiqueta do
 
