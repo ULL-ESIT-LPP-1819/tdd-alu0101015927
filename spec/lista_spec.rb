@@ -68,7 +68,7 @@ RSpec.describe Etiqueta do
       l.insert(@e9)
       l.insert(@e10)
 
-      expect(clasificar(l)).to be_a(String)
+      expect(clasificar(l)).to eq("{{ 5, 6, 1, 2, 3, 4 }, { 8, 7, 9, 10 }}")
     end
   end
 

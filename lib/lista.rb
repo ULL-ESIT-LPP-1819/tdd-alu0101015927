@@ -22,11 +22,10 @@ class List
 
        def extract
 
-
+          return nil if self.empty
           aux = @head
-          tmp = Node.new(nil,nil,nil)
-          tmp = @head.next
-          @head = tmp
+          @head = @head.next
+
 
           @head.prev = nil unless @head.nil?
           @tail = nil if @head.nil?
@@ -42,11 +41,16 @@ class List
       def to_s
         node = Node.new(nil,nil,nil)
         node = @head
-        tmp = ""
+
+        tmp = "{"
+        tmp += " #{node.value.to_s}"
+        node = node.next
+
         while !(node.nil?)
-          tmp += "#{node.value.to_s}\n"
+          tmp += ", #{node.value.to_s}"
           node = node.next
         end
+        tmp += " }"
         tmp
       end
 
@@ -65,4 +69,26 @@ class List
        def empty
          @head.nil?
        end
+end
+
+
+def clasificar (lista)
+  sal_ir = List.new()
+  sal_mal = List.new()
+
+  node = lista.extract
+  
+  while !(node.nil?)
+
+    if node.value.sal > 6
+      sal_mal.insert(node.value.sal)
+    else
+      sal_ir.insert(node.value.sal)
+    end
+    node = lista.extract
+  end
+
+
+  "{#{sal_ir.to_s}, #{sal_mal.to_s}}"
+
 end
