@@ -54,5 +54,23 @@ RSpec.describe Etiqueta do
     end
   end
 
+  describe "# clasificando la lista segun la sal" do
+    it "se clasifica correctamente la sal " do
+      l = List.new()
+      l.insert(@e1)
+      l.insert(@e2)
+      l.insert(@e3)
+      l.insert(@e4)
+      l.insert(@e5)
+      l.insert(@e6)
+      l.insert(@e7)
+      l.insert(@e8)
+      l.insert(@e9)
+      l.insert(@e10)
+
+      expect(clasificar(l)).to be_a(String)
+    end
+  end
+
 
 end
