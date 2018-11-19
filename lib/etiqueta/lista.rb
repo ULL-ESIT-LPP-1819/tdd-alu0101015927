@@ -43,9 +43,11 @@ class List
         node = @head
 
         tmp = "{"
-        tmp += " #{node.value.to_s}"
-        node = node.next
 
+        if !(node.nil?)
+          tmp += " #{node.value.to_s}"
+          node = node.next
+        end
         while !(node.nil?)
           tmp += ", #{node.value.to_s}"
           node = node.next
@@ -77,7 +79,7 @@ def clasificar (lista)
   sal_mal = List.new()
 
   node = lista.extract
-  
+
   while !(node.nil?)
 
     if node.value.sal > 6
@@ -90,5 +92,31 @@ def clasificar (lista)
 
 
   "{#{sal_ir.to_s}, #{sal_mal.to_s}}"
+
+end
+
+
+
+def clasificar_imc (lista)
+  con_ob = List.new()
+  sin_ob = List.new()
+
+  node = lista.extract
+
+  while !(node.nil?)
+
+    if node.value.datos.indice_masa_corporal >= 30.0
+      con_ob.insert(node.value.datos.indice_masa_corporal)
+    else
+      sin_ob.insert(node.value.datos.indice_masa_corporal)
+    end
+    node = lista.extract
+  end
+
+  clasificacion = List.new
+  clasificacion.insert(sin_ob)
+  clasificacion.insert(con_ob)
+
+  clasificacion.to_s
 
 end
