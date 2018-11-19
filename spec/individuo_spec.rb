@@ -5,7 +5,7 @@ RSpec.describe Etiqueta do
   context "# herencia" do
     before :each do
       @p1 = Individuo.new("Pepe")
-      @p2 = Paciente.new()
+      @p2 = Paciente.new("Juan")
     end
 
     it "un objeto individuo es una instancia de la clase Individuo" do
@@ -16,7 +16,7 @@ RSpec.describe Etiqueta do
         expect(@p2).to be_an_instance_of(Paciente)
     end
 
-    
+
   end
 
 end
