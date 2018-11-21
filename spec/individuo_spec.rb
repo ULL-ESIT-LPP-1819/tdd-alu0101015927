@@ -32,6 +32,7 @@ RSpec.describe Etiqueta do
 
     context "# tipo" do
       before :each do
+        
           @p1 = Individuo.new("Pepe")
           @p2 = Paciente.new("Juan", 60,175,25,0,85,112)
         end
@@ -41,6 +42,10 @@ RSpec.describe Etiqueta do
       end
       it "Un objeto paciente responde a los metodos nombre y datos" do
         expect(@p2).to respond_to(:name, :datos)
+      end
+
+      it "un objeto individuo responde al metodo to_s" do
+        expect(@p1).to respond_to('to_s')
       end
 
       it "un objeto paciente responde al metodo to_s" do
