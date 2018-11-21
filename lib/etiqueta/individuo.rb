@@ -16,5 +16,11 @@ class Paciente < Individuo
     @datos = Nutricion.new(peso, talla, edad, sexo, ccintura, ccadera)
   end
 
+  def to_s
+
+    tmp = "Nombre #{@name}\n"
+    tmp += @datos.to_s
+
+  end
 
 end

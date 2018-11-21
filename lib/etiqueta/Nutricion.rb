@@ -69,4 +69,18 @@ class Nutricion
 			end
 	end
 
+	def to_s
+
+		tmp = "Peso: #{@peso}\n"
+		tmp += "Altura: #{@talla}\n"
+		tmp += "Edad: #{@edad}\n"
+		tmp += "Sexo: #{@sexo}\n"
+		tmp += "Cincurferencia de la cintura: #{@ccintura}\n"
+		tmp += "Cincurferencia de la cadera: #{@ccadera}\n"
+		tmp += "IMC: #{self.imc_tabla}\n"
+		tmp += "Porcentaje de grasa: #{self.porc_grasa}\n"
+		tmp += "RCC: #{self.rcc_tabla}\n"
+
+	end
+
 end
