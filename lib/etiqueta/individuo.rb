@@ -7,11 +7,12 @@ class Individuo
   end
 
   def to_s
-    "Nombre: #{@name}"    
+    "Nombre: #{@name}"
   end
 end
 
 class Paciente < Individuo
+  include Comparable
   attr_accessor :datos
 
   def initialize(name, peso, talla, edad, sexo, ccintura, ccadera)
@@ -26,4 +27,7 @@ class Paciente < Individuo
 
   end
 
+  def <=>(anOther)
+    datos.indice_masa_corporal <=> anOther.datos.indice_masa_corporal
+  end
 end
