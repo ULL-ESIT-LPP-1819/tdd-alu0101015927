@@ -1,5 +1,3 @@
-require './lib/etiqueta.rb'
-
 RSpec.describe Etiqueta do
 
   context "# etiquetas comparables" do
