@@ -1,6 +1,7 @@
 require "etiqueta/version"
 
 class Tag
+  include Comparable
   attr_reader :ngrasas, :ngrasas_s, :hidratos, :azucares, :proteinas, :sal, :grasas_m, :grasas_p, :polialcoholes, :almidon, :fibra, :vitaminas, :minerales
 
     def initialize(ngrasas, ngrasas_s, hidratos, azucares, proteinas, sal, grasas_m, grasas_p, polialcoholes, almidon, fibra, vitaminas, minerales)
@@ -69,4 +70,11 @@ class Tag
           a +=  " Minerales\t\t #{@minerales} g.\t\t #{self.ingesta_referencia(@minerales)}%\n"
         end
     end
+
+
+          def <=>(anOther)
+            valor_energetico_kj <=> anOther.valor_energetico_kj
+          end
+
+
 end
