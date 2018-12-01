@@ -21,13 +21,15 @@ class Paciente < Individuo
   end
 
   def to_s
-
     tmp = "Nombre #{@name}\n"
     tmp += @datos.to_s
-
   end
 
   def <=>(anOther)
     datos.indice_masa_corporal <=> anOther.datos.indice_masa_corporal
+  end
+
+  def enumerar
+    datos.indice_masa_corporal
   end
 end

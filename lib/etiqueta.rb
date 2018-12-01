@@ -72,9 +72,11 @@ class Tag
     end
 
 
-          def <=>(anOther)
-            valor_energetico_kj <=> anOther.valor_energetico_kj
-          end
+    def <=>(anOther)
+      valor_energetico_kj <=> anOther.valor_energetico_kj
+    end
 
-
+    def enumerar
+      valor_energetico_kj
+    end
 end

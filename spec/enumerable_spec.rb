@@ -52,11 +52,11 @@ RSpec.describe Etiqueta do
         @persona4 = Paciente.new("d", 78,150,3,4,5,6)
         @persona5 = Paciente.new("e", 90,155,3,4,5,6)
         @l = List.new
-        @l.insert(@p1)
-        @l.insert(@p2)
-        @l.insert(@p3)
-        @l.insert(@p4)
-        @l.insert(@p5)
+        @l.insert(@persona1)
+        @l.insert(@persona2)
+        @l.insert(@persona3)
+        @l.insert(@persona4)
+        @l.insert(@persona5)
 
       end
 
@@ -65,19 +65,19 @@ RSpec.describe Etiqueta do
      end
 
       it "comprobando el metodo select" do
-        expect(@l.select{@persona1}).to eq([125, 150, 25, 50, 200])
+        expect(@l.select{@persona1}).to eq([21.0, 46.9, 19.0, 34.7, 37.5])
       end
 
       it "comprobando el metodo max" do
-        expect(@l.max).to eq(200)
+        expect(@l.max).to eq(46.9)
       end
 
       it "comprobando el metodo min" do
-        expect(@l.min).to eq(25)
+        expect(@l.min).to eq(19.0)
       end
 
       it "comprobando el metodo sort" do
-        expect(@l.sort).to eq([25, 50, 125, 150, 200])
+        expect(@l.sort).to eq([19.0, 21.0, 34.7, 37.5, 46.9])
       end
 
     end

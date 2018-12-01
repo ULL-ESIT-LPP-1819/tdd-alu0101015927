@@ -78,7 +78,7 @@ class List
          node = @head
 
          while !(node.nil?)
-             yield node.value.valor_energetico_kj
+             yield node.value.enumerar
            node = node.next
          end
 
