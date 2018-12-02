@@ -1,9 +1,29 @@
 require "etiqueta/version"
 
+
+
+# Author::    Marta Garcia (mailto:alu0101015927@ull.edu.es)
+# Copyright:: Cretive Commons
+# License::   Distributes under the same terms as Ruby
+#
+# == Clase Tag
+# Esta clase se ha creado para describir las
+# etiquetas nutricionales.
+# Se han incluido el mixin Comparable.
+# * metodo initialize
+# * valor_energetico_kj
+# * valor_energetico_kcal
+# * ingesta_referencia
+# * metodo to_s
+# * <=>
+# * enumerar
+#
+
 class Tag
   include Comparable
   attr_reader :ngrasas, :ngrasas_s, :hidratos, :azucares, :proteinas, :sal, :grasas_m, :grasas_p, :polialcoholes, :almidon, :fibra, :vitaminas, :minerales
 
+    # Se asignan los valores de cada nutiente
     def initialize(ngrasas, ngrasas_s, hidratos, azucares, proteinas, sal, grasas_m, grasas_p, polialcoholes, almidon, fibra, vitaminas, minerales)
       @ngrasas = ngrasas
       @ngrasas_s = ngrasas_s
@@ -21,23 +41,27 @@ class Tag
       @minerales = minerales
     end
 
+    # Calcula el valor energetico de la etiqueta nutricional en kj
     def valor_energetico_kj()
 
       @ngrasas*37 + @grasas_m*37 + @grasas_p*37 + @hidratos*17 + @polialcoholes*10 + @almidon*17 + @fibra*8 + @proteinas*17 + @sal*25
 
     end
 
+    # Calcula el valor energetico de la etiqueta nutricional en kcal
     def valor_energetico_kcal()
 
       @ngrasas*9 + @grasas_m*9 + @grasas_p*9 + @hidratos*4 + @polialcoholes*2.4 + @almidon*4 + @fibra*2 + @proteinas*4 + @sal*6
 
     end
 
+    # Calcula el porcentaje de ingesta de un nutriente con respecto al total
     def ingesta_referencia(x)
       suma = ngrasas + ngrasas_s + hidratos + azucares + proteinas + sal + grasas_m + grasas_p + polialcoholes + almidon + fibra + vitaminas + minerales
       (x*100)/suma
     end
 
+    # Genera el string que representa a la etiqueta nutricional
     def to_s
       a =  " \t\t\tPorcion \t IR \n"
       a +=  " Valor energetico\t #{self.valor_energetico_kj} kJ\t 8.400kJ\n"
@@ -71,11 +95,13 @@ class Tag
         end
     end
 
-
+    # Se define para incluir el mixin comparable
+    # Se toma el valor energetico en kj
     def <=>(anOther)
       valor_energetico_kj <=> anOther.valor_energetico_kj
     end
 
+    # Se define para enumerar solo en funcion del valor energetico en kj
     def enumerar
       valor_energetico_kj
     end

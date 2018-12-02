@@ -1,15 +1,42 @@
 
+# Author::    Marta Garcia (mailto:alu0101015927@ull.edu.es)
+# Copyright:: Cretive Commons
+# License::   Distributes under the same terms as Ruby
+#
+# == Estructura Node
+# Esta estructura se ha creado para describir a los nodos
+# que contiene la clase lista
+#
+
+
   Node = Struct.new(:value, :next, :prev)
+
+
+  #
+  # == Clase List
+  # Esta clase se ha creado para describir el comportamiento
+  # de una lista doblemente enlazada.
+  # Se ha incluido el mixin Enumerable
+  # * initialize
+  # * insert
+  # * extract
+  # * to_s
+  # * length
+  # * empty
+  # * each
+  #
 
 class List
   include Enumerable
       attr_accessor :head, :tail
 
+        # Se ponen a nil el nodo del inicio y del final
        def initialize
          @head = nil
          @tail = nil
        end
 
+       # Se inserta un valor por el final
        def insert(value)
 
            node = Node.new(value, nil, @tail)
@@ -21,6 +48,7 @@ class List
 
        end
 
+       # Se extrae un nodo por el inicio
        def extract
 
           return nil if self.empty
@@ -38,7 +66,7 @@ class List
 
        end
 
-
+       # Se convierte en string la lista
       def to_s
         node = Node.new(nil,nil,nil)
         node = @head
@@ -57,6 +85,7 @@ class List
         tmp
       end
 
+      # Se calcula la longitud de la lista
        def length
 
           size = 0
@@ -69,10 +98,13 @@ class List
           size
         end
 
+        # Se calcula si la lista está vacia
        def empty
          @head.nil?
        end
 
+       # Se incluye el metodo del mixin Enumerable
+       # Se define como una iteracion sobre los nodos de la lista
        def each
          node = Node.new(nil,nil,nil)
          node = @head
@@ -87,6 +119,13 @@ class List
 
 end
 
+
+#
+# == Metodo clasificar
+# Este metodo se ha creado para describir la
+# clasificacion de una lista de etiquetas
+# nutricionales en funcion de la cantidad de
+# sal y la cantidad de ingesta recomendada
 
 def clasificar (lista)
   sal_ir = List.new()
@@ -110,6 +149,13 @@ def clasificar (lista)
 end
 
 
+#
+# == Metodo clasificar_imc
+# Este metodo se ha creado para describir la
+# clasificacion de una lista de paciente en
+# funcion del imc para comprobar si tienen o
+# no obesidad
+#
 
 def clasificar_imc (lista)
   con_ob = List.new()

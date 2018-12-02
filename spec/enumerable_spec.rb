@@ -1,4 +1,6 @@
 require './lib/etiqueta/lista.rb'
+require './lib/etiqueta/individuo.rb'
+
 RSpec.describe Etiqueta do
 
   context "# lista de etiquetas enumerables" do
@@ -9,7 +11,7 @@ RSpec.describe Etiqueta do
       @e3 = Tag.new(0,0,0,0,0, 1 ,0,0,0,0,0,0,0)
       @e4 = Tag.new(0,0,0,0,0, 2 ,0,0,0,0,0,0,0)
       @e5 = Tag.new(0,0,0,0,0, 8 ,0,0,0,0,0,0,0)
-      @l = List.new
+      @l = List.new 
       @l.insert(@e1)
       @l.insert(@e2)
       @l.insert(@e3)

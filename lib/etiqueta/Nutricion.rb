@@ -1,7 +1,25 @@
+
+# Author::    Marta Garcia (mailto:alu0101015927@ull.edu.es)
+# Copyright:: Cretive Commons
+# License::   Distributes under the same terms as Ruby
+#
+# == Clase Nutricion
+# Esta clase se ha creado para describir los
+# datos antropomedicos
+# * metodo initialize
+# * metodo indice_masa_corporal
+# * imc_tabla
+# * porc_grasa
+# * relacion_cc
+# * rcc_tabla
+# * metodo to_s
+#
+
 class Nutricion
 
 	attr_accessor :peso, :talla, :edad, :sexo, :ccintura, :ccadera
 
+	# Se asignan los valores para los datos antropomedicos
 	def initialize(peso, talla, edad, sexo, ccintura, ccadera)
 		@peso = Float(peso)
 		@talla = Float(talla)
@@ -11,11 +29,12 @@ class Nutricion
 		@ccadera = Float(ccadera)
 	end
 
+	# Se calcula el indice de masa corporal
 	def indice_masa_corporal
 		(peso / (talla * talla) * 10000).round(1)
 	end
 
-
+	# Se imprime el valor al que corresponde el indice de masa corporal
 	def imc_tabla
 		x = self.indice_masa_corporal
 
@@ -34,15 +53,17 @@ class Nutricion
 
 	end
 
+	# Se calcula el porceje de grasa
 	def porc_grasa
 		(1.2 * self.indice_masa_corporal + 0.23 * edad - 10.8 * sexo - 5.4).round(1)
 	end
 
+	# Se calcula la relacion entre la cintura y la cadera
 	def relacion_cc
 		(ccintura / ccadera).round(2)
 	end
 
-
+	# Se imprime el valor al que corresponde la relacion entre la cintura y la cadera
 	def rcc_tabla
 		x = self.relacion_cc
 
@@ -69,6 +90,7 @@ class Nutricion
 			end
 	end
 
+	# Se convierte en un string la representacion de los datos antropomedicos
 	def to_s
 
 		tmp = "Peso: #{@peso}\n"
