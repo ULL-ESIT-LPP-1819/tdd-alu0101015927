@@ -103,6 +103,7 @@ class List
          @head.nil?
        end
 
+
        # Se incluye el metodo del mixin Enumerable
        # Se define como una iteracion sobre los nodos de la lista
        def each

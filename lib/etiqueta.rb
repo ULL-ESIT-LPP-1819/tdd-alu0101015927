@@ -103,6 +103,6 @@ class Tag
 
     # Se define para enumerar solo en funcion del valor energetico en kj
     def enumerar
-      valor_energetico_kj
+      valor_energetico_kcal
     end
 end

@@ -17,7 +17,7 @@
 
 class Nutricion
 
-	attr_accessor :peso, :talla, :edad, :sexo, :ccintura, :ccadera
+	attr_accessor :n, :peso, :talla, :edad, :sexo, :ccintura, :ccadera
 
 	# Se asignan los valores para los datos antropomedicos
 	def initialize(peso, talla, edad, sexo, ccintura, ccadera)

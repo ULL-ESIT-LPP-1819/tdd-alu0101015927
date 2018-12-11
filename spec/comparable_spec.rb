@@ -38,8 +38,8 @@ RSpec.describe Etiqueta do
 
   context "# pacientes comparables" do
     before :each do
-      @persona1 = Paciente.new("a", 60,169,3,4,5,6)
-      @persona2 = Paciente.new("b", 120,160,3,4,5,6)
+      @persona1 = Paciente.new(0,"a", 60,169,3,4,5,6)
+      @persona2 = Paciente.new(0,"b", 120,160,3,4,5,6)
 
     end
 

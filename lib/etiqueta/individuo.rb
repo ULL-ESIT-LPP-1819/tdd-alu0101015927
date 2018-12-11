@@ -1,5 +1,4 @@
-require "etiqueta/Nutricion.rb"
-
+require "./lib/etiqueta/Nutricion.rb"
 
 # Author::    Marta Garcia (mailto:alu0101015927@ull.edu.es)
 # Copyright:: Cretive Commons
@@ -43,9 +42,10 @@ class Paciente < Individuo
   attr_accessor :datos
 
   # Se asignan los datos del paciente
-  def initialize(name, peso, talla, edad, sexo, ccintura, ccadera)
+  def initialize(n, name, peso, talla, edad, sexo, ccintura, ccadera)
     @name = name
     @datos = Nutricion.new(peso, talla, edad, sexo, ccintura, ccadera)
+
   end
 
   # Se convierte en string los datos del paciente
@@ -64,4 +64,44 @@ class Paciente < Individuo
   def enumerar
     datos.indice_masa_corporal
   end
+
+
+    def peso_teorico_ideal
+      (@datos.talla - 150)*0.75 + 50
+    end
+
+    def gasto_energetico_basal
+
+      if @datos.sexo == 0
+          (10*@datos.peso) + (6.25*@datos.talla) - (5*@datos.edad) + 5
+      else
+        (10*@datos.peso) + (6.25*@datos.talla) - (5*@datos.edad) + 161
+      end
+    end
+
+    def efecto_termogeno
+      self.gasto_energetico_basal * 0.1
+    end
+
+    def gasto_actividad_fisica
+
+        if @datos.n == 0
+          factor = 0.0
+        elsif @datos.n == 1
+          factor = 0.12
+        elsif @datos.n == 2
+          factor = 0.27
+        else
+          factor = 0.54
+        end
+
+        self.gasto_energetico_basal * factor
+
+    end
+
+    def gasto_energetico_total
+      self.gasto_energetico_basal + self.efecto_termogeno + self.gasto_actividad_fisica
+    end
+
+
 end
