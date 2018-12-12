@@ -39,6 +39,7 @@ RSpec.describe Etiqueta do
       @menu5.insert(@e5)
       @menu5.insert(@e4)
 
+
     end
 
     it "menu del paciente 1" do
