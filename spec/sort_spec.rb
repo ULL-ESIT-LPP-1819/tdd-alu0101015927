@@ -1,6 +1,7 @@
 require './lib/etiqueta/lista.rb'
 require './lib/etiqueta.rb'
 require './lib/etiqueta/individuo.rb'
+require './lib/etiqueta/array.rb'
 
 RSpec.describe Etiqueta do
 
@@ -42,16 +43,16 @@ RSpec.describe Etiqueta do
       @menus = [@menu1,@menu2,@menu3,@menu4,@menu5,@menu1,@menu2,@menu3,@menu4,@menu5]
 
       @pacientes = List.new
-      @pacientes.insert(@menu1)
-      @pacientes.insert(@menu2)
-      @pacientes.insert(@menu3)
-      @pacientes.insert(@menu4)
-      @pacientes.insert(@menu5)
-      @pacientes.insert(@menu1)
-      @pacientes.insert(@menu2)
-      @pacientes.insert(@menu3)
-      @pacientes.insert(@menu4)
-      @pacientes.insert(@menu5)
+      @pacientes.insert(@p1)
+      @pacientes.insert(@p2)
+      @pacientes.insert(@p3)
+      @pacientes.insert(@p4)
+      @pacientes.insert(@p5)
+      @pacientes.insert(@p1)
+      @pacientes.insert(@p2)
+      @pacientes.insert(@p3)
+      @pacientes.insert(@p4)
+      @pacientes.insert(@p5)
 
     end
 
@@ -65,11 +66,17 @@ RSpec.describe Etiqueta do
       expect(@pacientes.length).to eq(10)
     end
 
-    it "ordenar array con for" do
+    it "ordenar lista de pacientes con for, each y sort " do
+      expect(@pacientes.sort_each).to eq([2580.95, 2580.95, 2883.94, 2883.94, 2955.69, 2955.69, 3056.14, 3056.14, 3847.44, 3847.44])
+      expect(@pacientes.sort_for).to eq([2580.95, 2580.95, 2883.94, 2883.94, 2955.69, 2955.69, 3056.14, 3056.14, 3847.44, 3847.44])
+      expect(@pacientes.map{ |x| x.gasto_energetico_total}.sort ).to eq([2580.95, 2580.95, 2883.94, 2883.94, 2955.69, 2955.69, 3056.14, 3056.14, 3847.44, 3847.44])
+    end
 
+    it "ordenar array de menus con for, each y sort" do
+      expect(@menus.sort_each).to eq([740.0, 740.0, 916.0, 916.0, 1000.0, 1000.0, 2440.0, 2440.0, 2524.0, 2524.0])
+      expect(@menus.sort_for).to eq([740.0, 740.0, 916.0, 916.0, 1000.0, 1000.0, 2440.0, 2440.0, 2524.0, 2524.0])
+      expect(@menus.map{ |x| x.reduce(:+)}.sort).to eq([740.0, 740.0, 916.0, 916.0, 1000.0, 1000.0, 2440.0, 2440.0, 2524.0, 2524.0])
     end
 
   end
-
-
 end
