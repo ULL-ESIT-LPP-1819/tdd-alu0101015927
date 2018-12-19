@@ -3,6 +3,8 @@ require './lib/etiqueta.rb'
 require './lib/etiqueta/individuo.rb'
 require './lib/etiqueta/array.rb'
 
+require 'benchmark'
+
 RSpec.describe Etiqueta do
 
   context "# menu" do
@@ -78,5 +80,17 @@ RSpec.describe Etiqueta do
       expect(@menus.map{ |x| x.reduce(:+)}.sort).to eq([740.0, 740.0, 916.0, 916.0, 1000.0, 1000.0, 2440.0, 2440.0, 2524.0, 2524.0])
     end
 
+    it "benchmark" do
+      n = 50000
+      Benchmark.bm do |x|
+        x.report("for lista:") {n.times do @pacientes.sort_for; end}
+        x.report("each lista:"){n.times do @pacientes.sort_each; end}
+        x.report("sort lista:"){n.times do @pacientes.map{ |x| x.gasto_energetico_total}.sort ; end}
+
+        x.report("for array:") {n.times do @menus.sort_for; end}
+        x.report("each array:"){n.times do @menus.sort_each; end}
+        x.report("sort array:"){n.times do @menus.map{ |x| x.reduce(:+)}.sort; end}
+      end
+    end
   end
 end
