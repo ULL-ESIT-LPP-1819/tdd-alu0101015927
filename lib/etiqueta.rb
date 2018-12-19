@@ -98,11 +98,11 @@ class Tag
     # Se define para incluir el mixin comparable
     # Se toma el valor energetico en kj
     def <=>(anOther)
-      valor_energetico_kj <=> anOther.valor_energetico_kj
+      valor_energetico_kcal <=> anOther.valor_energetico_kcal
     end
 
     # Se define para enumerar solo en funcion del valor energetico en kj
-    def enumerar
-      valor_energetico_kcal
+    def + (anOther)
+      valor_energetico_kcal + anOther.valor_energetico_kcal
     end
 end

@@ -60,11 +60,6 @@ class Paciente < Individuo
     datos.indice_masa_corporal <=> anOther.datos.indice_masa_corporal
   end
 
-  # Se define para enumerar solo en funcion del valor energetico en kj
-  def enumerar
-    datos.indice_masa_corporal
-  end
-
 
     def peso_teorico_ideal
       (@datos.talla - 150)*0.75 + 50
@@ -80,7 +75,7 @@ class Paciente < Individuo
     end
 
     def efecto_termogeno
-      self.gasto_energetico_basal * 0.1
+      gasto_energetico_basal * 0.1
     end
 
     def gasto_actividad_fisica
@@ -95,12 +90,12 @@ class Paciente < Individuo
           factor = 0.54
         end
 
-        self.gasto_energetico_basal * factor
+        gasto_energetico_basal * factor
 
     end
 
     def gasto_energetico_total
-      self.gasto_energetico_basal + self.efecto_termogeno + self.gasto_actividad_fisica
+      gasto_energetico_basal + efecto_termogeno + gasto_actividad_fisica
     end
 
 
