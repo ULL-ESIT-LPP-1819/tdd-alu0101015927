@@ -80,6 +80,7 @@ RSpec.describe Etiqueta do
       expect(@menus.map{ |x| x.reduce(:+)}.sort).to eq([740.0, 740.0, 916.0, 916.0, 1000.0, 1000.0, 2440.0, 2440.0, 2524.0, 2524.0])
     end
 
+
     it "benchmark" do
       n = 50000
       Benchmark.bm do |x|
